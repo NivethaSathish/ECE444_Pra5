@@ -4,25 +4,23 @@ import json
 url = "http://ece444practical5-env.eba-5cgzpauf.us-east-2.elasticbeanstalk.com/predict"
 
 fake_test_1 = {
-    "text": "Share a certain post of Bill Gates on Facebook and he will send you money."  # Replace with your own test text
+    "text": "Share a certain post of Bill Gates on Facebook and he will send you money."  
 }
 
 fake_test_2 = {
-    "text": "A Fargo, North Dakota, man was arrested for clearing snow with a flamethrower."  # Replace with your own test text
+    "text": "A Fargo, North Dakota, man was arrested for clearing snow with a flamethrower."  
 }
 
 real_test_1 = {
-    "text": "Business groups, opposition parties and the Ontario government react to Trudeau government’s major cut in permanent resident targets."  # Replace with your own test text
+    "text": "Business groups, opposition parties and the Ontario government react to Trudeau government’s major cut in permanent resident targets." 
 }
 
 real_test_2 = {
-    "text": "More than 20 lawmakers from his party sign letter asking Canadian prime minister to step down before election"  # Replace with your own test text
+    "text": "More than 20 lawmakers from his party sign letter asking Canadian prime minister to step down before election"  
 }
 
-# send POST request
 response = requests.post(url, json=fake_test_1)
 
-# check response
 if response.status_code == 200:
     result = response.json()
     print(f"Prediction: {result['prediction']}")
